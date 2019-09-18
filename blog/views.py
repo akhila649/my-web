@@ -1,8 +1,16 @@
 from django.shortcuts import render
-from .models import Post
 
-def post_list(request):
-    posts=Post.objects.filter(published_date_lte=timezone.now()).order_by('published_date')
-    return render(request,'blog/main.html',{'posts':posts})
 
-# Create your views here.
+def main(request):
+    return render(request,'blog/main.html')
+
+def wm_home(request):
+    return render(request, 'blog/wm-home.html')
+
+def upload(request):
+    return render(request, 'blog/upload.html')
+
+def feedback(request):
+    return render(request, 'blog/feedback.html')
+   
+
